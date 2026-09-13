@@ -49,7 +49,7 @@ type UserData = {
   [key: string]: unknown;
 };
 
-const buildConstructorMethods = (methods: ModuleMethod[]) => {
+const buildConstructorMethods = (methods: ModuleMethod[] | undefined) => {
   const moduleMethods = Array.isArray(methods) ? methods : [];
   const constructorMethods = moduleMethods
     .filter((m) => m.executeOnLoad)
